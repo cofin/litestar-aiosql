@@ -1,6 +1,6 @@
 # Litestar Aiosql
 
-> [!ATTENTION]
+> [!IMPORTANT]
 > This plugin currently contains minimal features and is a work-in-progress
 
 ## Installation
