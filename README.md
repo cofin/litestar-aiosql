@@ -1,4 +1,7 @@
-# Litestar asyncpg
+# Litestar Aiosql
+
+> [!ATTENTION]
+> This plugin currently contains minimal features and is a work-in-progress
 
 ## Installation
 
