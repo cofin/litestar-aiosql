@@ -4,17 +4,14 @@ from typing import TYPE_CHECKING, TypeVar
 
 from litestar.plugins import InitPluginProtocol
 
-from litestar_aiosql.config import AiosqlConfig 
-
 if TYPE_CHECKING:
-    from typing import Any
-
     from litestar.config.app import AppConfig
+
+    from litestar_aiosql.config import AiosqlConfig
 
 T = TypeVar("T")
 
 
- 
 class AiosqlPlugin(InitPluginProtocol):
     """Aiosql plugin."""
 

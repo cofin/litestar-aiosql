@@ -3,14 +3,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, TypeVar
 
-
 from .service import AiosqlQueryManager
- 
 
 if TYPE_CHECKING:
     from typing import Any
 
-    from litestar.config.app import AppConfig
 
 T = TypeVar("T")
 
@@ -27,4 +24,3 @@ class AiosqlConfig:
             A string keyed dict of names to be added to the namespace for signature forward reference resolution.
         """
         return {"AiosqlQueryManager": AiosqlQueryManager}
- 

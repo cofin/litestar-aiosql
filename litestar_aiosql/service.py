@@ -3,11 +3,10 @@ from __future__ import annotations
 import contextlib
 from typing import TYPE_CHECKING, Any, TypeVar
 
-
 if TYPE_CHECKING:
     from collections.abc import AsyncIterator
 
-    from aiosql.queries import Queries 
+    from aiosql.queries import Queries
 
 __all__ = ["AiosqlQueryManager"]
 
@@ -48,7 +47,7 @@ class AiosqlQueryManager:
         return await self.fn(method)(conn=self.connection, **binds)
 
     async def insert_update_delete(self, method: str, **binds: Any) -> None:
-        return await self.fn(method)(conn=self.connection, **binds)  # type: ignore
+        return await self.fn(method)(conn=self.connection, **binds)  # type: ignore  # noqa: PGH003
 
     async def insert_update_delete_many(self, method: str, **binds: Any) -> Any | None:
         return await self.fn(method)(conn=self.connection, **binds)
@@ -73,4 +72,3 @@ class AiosqlQueryManager:
         Returns a sorted list of available functions found in aiosql
         """
         return sorted([q for q in self.queries.available_queries if not q.endswith("_cursor")])
- 
